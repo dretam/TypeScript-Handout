@@ -1,5 +1,8 @@
 import {Student,Teacher} from './Core';
-import {Author, Book} from './Library';
+import Author from './Library';
+import {Book} from './Library';
+import printHaloDunia from './MyFunctions';
+import { jumlahkanAngka, multiplyNumber as perkalian, helloSomeone } from './MyFunctions';
 
 console.log("====================Module======================");
 
@@ -11,3 +14,8 @@ let tommyKnocker: Book = new Book("Tommy Knockers", stephen, "2FD");
 console.log(cynthia.name);
 console.log(tommyKnocker.author.name);
 console.log(alex);
+
+printHaloDunia();
+console.log(jumlahkanAngka(3,4));
+console.log(perkalian(2, 4));
+helloSomeone('Stanislav Petrov');

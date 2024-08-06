@@ -4,9 +4,10 @@ class Employee {
     name: string;
     position: string;
     department: string;
-    birthDate: Date;
+    birthDate?: Date;
     readonly birthPlace: string;
     salary: number;
+    address?: string; //? adalah nullable, gak ada kewajiban untuk inisialisasi dia.
 
     constructor(name: string, position: string, department: string, birthDate: Date, birthPlace:any, salary: number) {
         this.name = name;
@@ -18,27 +19,30 @@ class Employee {
     }
 
     calculateAge(): number {
-        var today: Date = new Date();
-        var age: number = this.birthDate.getFullYear() - today.getFullYear();
-        if (today.getMonth() < this.birthDate.getMonth()) {
+        let today: Date = new Date();
+        let age: number = this.birthDate!.getFullYear() - today.getFullYear();
+        if (today.getMonth() < this.birthDate!.getMonth()) {
             --age;
         }
         return age;
     }
 
     calculateAnnualSalary(): number {
-        var annualSalary: number = 12 * this.salary;
+        let annualSalary: number = 12 * this.salary;
         return annualSalary;
     }
 
     printPersonalInformation(): void {
         console.log("Nama karyawan ini: " + this.name + ", posisinya: " + this.position +
-            ", departmentnya: " + this.department + ", birthDate: " + this.birthDate.toDateString());
+            ", departmentnya: " + this.department + ", birthDate: " + this.birthDate!.toDateString());
     }
 }
 
 let shanty: Employee = new Employee("Shanty", "Staff", "IT Department", new Date(1988, 10, 27), "Jakarta", 6000000);
 let johan: Employee = new Employee("Johan", "Staff", "IT Department", new Date(1986, 10, 27), "Bandung", 5000000);
+
+shanty.name = 'Shanty Aulia';
+//shanty.birthPlace = "Semarang"; gak bisa di set karena read only
 
 console.log(shanty);
 console.log("Umur Shanty: " + shanty.calculateAge());
@@ -73,8 +77,14 @@ console.log(`Destructuring shanty: ${position}, ${salary}`);
 const {position: posisi, salary: gaji} = shanty;
 console.log(`Destructuring shanty: ${posisi}, ${gaji}`);
 
+//Destructuring di parameter
 function prosesEmployee({birthPlace, name}:Employee):void{
     console.log(birthPlace);
     console.log(name);
 }
 prosesEmployee(johan);
+
+function prosesAny({nama, harga}: any):void{
+    console.log(`Product ini bernama ${nama}, dan harganya ${harga}`);
+}
+prosesAny({nama: 'Buku Tulis', harga: 23000});

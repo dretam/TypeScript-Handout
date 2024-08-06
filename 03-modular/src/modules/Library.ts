@@ -1,5 +1,5 @@
 
-export class Author {
+export default class Author {
     name: string;
     dateOfBirth: Date;
     gender: string;

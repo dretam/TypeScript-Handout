@@ -1,4 +1,3 @@
-
 export class Student {
     name: string;
     dateOfBirth: Date;

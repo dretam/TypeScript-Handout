@@ -3,22 +3,32 @@
 class Superior {
     public name: string;
     protected grade: number;
-    private accessNumber: number;
-    public constructor(name: string, grade: number, accessNumber: number) {
+    private accessNumber: string;
+    public constructor(name: string, grade: number, accessNumber: string) {
         this.name = name;
         this.grade = grade;
         this.accessNumber = accessNumber;
     }
     public printInformation() {
         console.log("Namanya adalah: " + this.grade);
+        this.printAccessNumber();
+    }
+    private printAccessNumber(){
+        console.log(`Access Number: ${this.accessNumber}`);
     }
 }
+
+let eddy = new Superior('Eddy Sukardi', 10, '1366');
+console.log(eddy.name);
+//Access modifier bekerja
+// console.log(eddy.grade);
+// console.log(eddy.accessNumber);
 
 class Supervisor extends Superior {
     public team: string;
     private shift: string;
-    constructor(name: string, grade: number, team: string, shift: string) {
-        super(name, grade);
+    constructor(name: string, grade: number, accessNumber: string, team: string, shift: string) {
+        super(name, grade, accessNumber);
         this.team = team;
         this.shift = shift;
     }
@@ -35,9 +45,15 @@ class Supervisor extends Superior {
     public printGrade() {
         console.log("The grade is: " + this.grade);
     }
+    public printPrivateInfo(){
+        console.log(this.shift);
+        console.log(this.getSalary());
+    }
 }
 
-let adrian: Supervisor = new Supervisor("Adrian Maulana", 6, "Team A", "Night Shift");
+let adrian: Supervisor = new Supervisor("Adrian Maulana", 6, "799", "Team A", "Night Shift");
+console.log(adrian);
+adrian.printPrivateInfo();
 
 //console.log(adrian.grade);
 //tidak bisa diakses karena protected
