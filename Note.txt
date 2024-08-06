@@ -7,3 +7,5 @@ tsc -v
 tsc primitive-data.ts
 
 npm create vite@latest
+
+npm install vite-plugin-checker --save-dev
