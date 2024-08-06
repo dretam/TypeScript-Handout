@@ -1,1 +1,9 @@
 Initial
+
+npm install -g typescript@next
+
+tsc -v
+
+tsc primitive-data.ts
+
+npm create vite@latest
