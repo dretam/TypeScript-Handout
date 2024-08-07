@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Posts</title>
+    <script type="module" src="/src/posts.ts" defer></script>
+  </head>
+  <body>
+    <div class="post-wrapper">
+        <h1 class="grid-title">
+            <span class="user-name">Anonymous</span>'s Posts
+        </h1>
+        <a href="index.html" class="back-button">Back to Users</a>
+        <table class="grid">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Body</th>
+                </tr>
+            </thead>
+            <tbody class="posts-body"></tbody>
+        </table>
+    </div>
+  </body>
+</html>

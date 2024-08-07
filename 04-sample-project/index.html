@@ -4,10 +4,69 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite + TS</title>
+    <title>User</title>
+    <script type="module" src="/src/main.ts" defer></script>
   </head>
   <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.ts"></script>
+    <div class="wrapper">
+      <div class="left">
+          <h1 class="grid-title">Users</h1>
+          <table class="grid">
+              <thead>
+                  <tr>
+                      <th>Action</th>
+                      <th>Name</th>
+                      <th>Username</th>
+                      <th>Email</th>
+                      <th>Company</th>
+                  </tr>
+              </thead>
+              <tbody class="users-body"></tbody>
+          </table>
+      </div>
+      <div class="right">
+          <h1 class="todo-title">To-Do</h1>
+          <div class="todo-body"></div>
+      </div>
+  </div>
+  <div class="modal">
+      <div class="dialog">
+          <div class="dialog-header">
+              <span>Contact Detail</span>
+              <a class="close-button" href="javascript:;"><i class="fas fa-window-close"></i></a>
+          </div>
+          <div class="dialog-body">
+              <div>
+                  <div>Address</div>
+                  <div class="address-container">
+                      <div>
+                          <span>Street</span>
+                          <span id="street"></span>
+                      </div>
+                      <div>
+                          <span>Suite</span>
+                          <span id="suite"></span>
+                      </div>
+                      <div>
+                          <span>City</span>
+                          <span id="city"></span>
+                      </div>
+                      <div>
+                          <span>Zip Code</span>
+                          <span id="zipcode"></span>
+                      </div>
+                  </div>
+              </div>
+              <div>
+                  <div>Phone</div>
+                  <div id="phone"></div>
+              </div>
+              <div>
+                  <div>Website</div>
+                  <div id="website"></div>
+              </div>
+          </div>
+      </div>
+  </div>
   </body>
 </html>
