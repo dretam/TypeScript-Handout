@@ -26,3 +26,36 @@ console.log("kosong typeof: " + typeof (kosong) + " ,value: " + kosong);
 console.log("zonk typeof: " + typeof (zonk));
 console.log("apapun typeof: " + typeof (apapun));
 console.log("apapunDua typeof: " + typeof (apapunDua));
+
+//Union type, memilih alternative
+let kataAtauAngka:string|number = 56;
+console.log(kataAtauAngka);
+console.log(typeof kataAtauAngka);
+kataAtauAngka = "Lima puluh enam";
+console.log(kataAtauAngka);
+console.log(typeof kataAtauAngka);
+
+//kataAtauAngka = true; tidak bisa karena pilihannya cuma string atau number
+//kataAtauAngka = {};
+
+let tigaAlternatif: object | string | boolean;
+tigaAlternatif = {name:'Ben'};
+tigaAlternatif = 'Test';
+tigaAlternatif = true;
+console.log(tigaAlternatif);
+
+//Type Literals
+//Menjadikan value sebagai tipe data, sehingga memaksa variable untuk memiliki tipe tersebut.
+let fixSize: 10;
+fixSize = 10;
+//fixSize = 40; akan error hanya bisa 10;
+
+console.log(fixSize);
+console.log(typeof fixSize);
+
+//Akan berguna jika dikombinasikan dengan union
+let rangeSize: 10 | 30 | 50;
+rangeSize = 10;
+rangeSize = 30;
+//rangeSize = 20; akan error
+console.log(rangeSize);

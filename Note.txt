@@ -1,11 +1,27 @@
-Initial
 
+Install type script di OS secara global:
 npm install -g typescript@next
 
+Cara check version typescript yang terinstall:
+(note: tsc adalah command executer-nya typescript)
 tsc -v
 
-tsc primitive-data.ts
+Cara meng-compile typescript menjadi javascript:
+tsc file-name.ts
 
+Cara membuat project baru dengan vite project:
 npm create vite@latest
 
-npm install vite-plugin-checker
+Membuat tyscript checker (linting) dalam project vite:
+1. npm install vite-plugin-checker
+
+2. buat file vite.config.ts di root project, lalu copy code ini:
+
+    import { defineConfig } from 'vite';
+    import checker from 'vite-plugin-checker';
+
+    export default defineConfig({
+    plugins: [
+        checker({ typescript: true }),
+    ],
+    });
